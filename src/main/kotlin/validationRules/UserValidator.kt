@@ -1,6 +1,7 @@
 package validationRules
 
 import colored
+import fakeRepo.FakeUser
 
 class UserValidator {
     companion object {
@@ -45,6 +46,10 @@ class UserValidator {
                 isValid = false
             } else if (password != confirmPassword) {
                 messages += "Parollar uygun deyil"
+                isValid = false
+            }
+            else if (FakeUser.users.any{ u->u.userName==userName }) {
+                messages += "Bu adda username artiq var!"
                 isValid = false
             }
 

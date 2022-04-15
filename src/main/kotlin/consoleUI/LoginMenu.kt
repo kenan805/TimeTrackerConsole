@@ -7,7 +7,7 @@ import validationRules.UserValidator
 class LoginMenu {
     companion object {
         fun login() {
-            println("~~~ SIGN IN ~~~")
+            colored { println("~~~ SIGN IN ~~~".blue.bold) }
             print("Enter username: ")
             var inputUsername = readLine()
             print("Enter password: ")
@@ -22,7 +22,9 @@ class LoginMenu {
             var user = FakeUser.users.find { u -> u.userName == inputUsername && u.password == inputPassword }
 
             if (user != null) {
-                println("Welcome ${user.userName}")
+                colored { println("Welcome ${user.userName}".green.italic) }
+                UserMenu.home(user.id)
+
             } else {
                 colored { println("User not found! Try again...".red.bold) }
                 login()

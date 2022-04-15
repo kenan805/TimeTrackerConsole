@@ -1,7 +1,6 @@
 package fakeRepo
 
 import entites.User
-import java.net.PasswordAuthentication
 
 class FakeUser {
     companion object {

@@ -6,7 +6,7 @@ import kotlin.system.exitProcess
 class MainMenu {
     companion object {
         fun main() {
-            println("Welcome NSPSOLUTIONS")
+            colored { println("Welcome NSPSOLUTIONS".cyan.bold) }
             println("1 - Sign in")
             println("2 - Sign up")
             println("0 - Exit")

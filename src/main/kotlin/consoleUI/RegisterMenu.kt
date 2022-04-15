@@ -36,7 +36,13 @@ class RegisterMenu {
                     UserValidator.messagesClear()
                     register()
                 } else {
-                    var newUser = User(inputUsername!!, inputMail!!, inputPassword!!, inputFirstName!!, inputLastName!!)
+                    var newUser = User(
+                        inputUsername!!,
+                        inputMail!!,
+                        inputPassword!!,
+                        inputFirstName!!,
+                        inputLastName!!,
+                    )
                     FakeUser.users.add(newUser)
                     colored { println("Ugurla qeydiyyatdan kecdiniz!\nGiris ede bilersiz".green.italic) }
                     LoginMenu.login()
